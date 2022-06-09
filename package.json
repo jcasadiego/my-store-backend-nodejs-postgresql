@@ -1,0 +1,48 @@
+{
+  "name": "my-store-backend-nodejs-postgresql",
+  "version": "1.0.0",
+  "description": "Curso de Backend con Node.js: Base de Datos con PostgreSQL ",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "lint": "eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcasadiego/my-store-api-rest-expressjs-platzi.git"
+  },
+  "keywords": [
+    "api",
+    "rest",
+    "api",
+    "rest",
+    "javascript",
+    "expressjs",
+    "express",
+    "js",
+    "postgresql"
+  ],
+  "author": "José Casadiego",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jcasadiego/my-store-api-rest-expressjs-platzi/issues"
+  },
+  "homepage": "https://github.com/jcasadiego/my-store-api-rest-expressjs-platzi#readme",
+  "devDependencies": {
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.6.2"
+  },
+  "dependencies": {
+    "@hapi/boom": "^10.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "faker": "^5.5.3",
+    "joi": "^17.6.0"
+  },
+  "engines": {
+    "node": "16.14.0"
+  }
+}
