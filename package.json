@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jcasadiego/my-store-api-rest-expressjs-platzi.git"
+    "url": "git+https://github.com/jcasadiego/my-store-backend-nodejs-postgresql"
   },
   "keywords": [
     "api",
@@ -26,9 +26,9 @@
   "author": "José Casadiego",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jcasadiego/my-store-api-rest-expressjs-platzi/issues"
+    "url": "https://github.com/jcasadiego/my-store-backend-nodejs-postgresql/issues"
   },
-  "homepage": "https://github.com/jcasadiego/my-store-api-rest-expressjs-platzi#readme",
+  "homepage": "https://github.com/jcasadiego/my-store-backend-nodejs-postgresql#readme",
   "devDependencies": {
     "eslint": "^8.17.0",
     "eslint-config-prettier": "^8.5.0",
