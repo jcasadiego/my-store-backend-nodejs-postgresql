@@ -6,9 +6,9 @@ services:
     restart: always
     environment:
       - DATABASE_HOST=127.0.0.1
-      - POSTGRES_DB=my_store
-      - POSTGRES_USER=jcasadiego
-      - POSTGRES_PASSWORD=Casadiegom2421
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
     ports:
       - "5432:5432"
     volumes:

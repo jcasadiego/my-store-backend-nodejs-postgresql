@@ -4,8 +4,8 @@ async function getConnection(){
   const client = new Client({
     host: 'localhost',
     port: 5432,
-    user: 'jcasadiego',
-    password: 'Casadiegom2421',
+    user: 'root',
+    password: 'root',
     database: 'my_store'
   });
   await client.connect();
