@@ -1,8 +1,7 @@
 const faker = require('faker');
 const boom = require('@hapi/boom');
 
-const sequelize = require('../libs/sequelize');
-const { QueryTypes } = require('sequelize');
+const { models } = require('../libs/sequelize');
 
 class ProductsService {
 
@@ -34,11 +33,8 @@ class ProductsService {
   }
 
   async find(){
-    const query = 'SELECT * FROM tasks';
-    const product = await sequelize.query(query, { type: QueryTypes.SELECT });
-    return {
-      product
-    };
+    const rta = await models.Product.findAll();
+    return rta;
   }
 
   async findOne(id){
