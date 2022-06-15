@@ -21,10 +21,6 @@ const ProductSchema = {
     allowNull: false,
     type: DataTypes.STRING,
   },
-  isBlock: {
-    allowNull: false,
-    type: DataTypes.BOOLEAN,
-  },
   createAt: {
     allowNull: false,
     type: DataTypes.DATE,
