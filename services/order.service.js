@@ -7,27 +7,44 @@ class OrderService {
   constructor(){}
 
   async create(data) {
-    return data;
+    const newOrder = await models.Order.create(data, {
+      include: ['customer']
+    });
+    return newOrder;
   }
 
   async find() {
-    const rta = await models.Order.findAll();
+    const rta = await models.Order.findAll({
+      include: ['customer']
+    });
     return rta;
   }
 
   async findOne(id) {
-    return { id };
+    const order = await models.Order.findByPk(id, {
+      include: [
+        {
+          association: 'customer',
+          include: ['user']
+        }
+      ]
+    });
+    if(!order){
+      throw boom.notFound('order not found');
+    }
+    return order;
   }
 
   async update(id, changes) {
-    return {
-      id,
-      changes,
-    };
+    const model = await this.findOne(id);
+    const rta = await model.update(changes);
+    return rta;
   }
 
   async delete(id) {
-    return { id };
+    const model = await this.findOne(id);
+    const rta = await model.destroy();
+    return { rta: true };
   }
 
 }

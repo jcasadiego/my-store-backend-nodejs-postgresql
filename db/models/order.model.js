@@ -1,6 +1,8 @@
 const { Sequelize, Model, DataTypes } = require("sequelize");
+const { CUSTOMER_TABLE } = require('./customer.model');
 
 const ORDER_TABLE = 'orders';
+
 
 const OrderSchema = {
   id: {
@@ -9,9 +11,16 @@ const OrderSchema = {
     primaryKey: true,
     type: DataTypes.INTEGER
   },
-  name: {
+  customerId: {
+    field: 'customer_id',
     allowNull: false,
-    type: DataTypes.STRING,
+    type: DataTypes.INTEGER,
+    references: {
+      model: CUSTOMER_TABLE,
+      key: 'id'
+    },
+    onUpdate: 'CASCADE',
+    onDelete: 'SET NULL'
   },
   createAt: {
     allowNull: false,
@@ -23,8 +32,16 @@ const OrderSchema = {
 
 class Order extends Model {
 
-  static associate(){
-    // associate
+  static associate(models){
+    this.belongsTo(models.Customer, {
+      as: 'customer',
+    });
+    this.belongsToMany(models.Product, {
+      as: 'items',
+      through: models.OrderProduct,
+      foreignKey: 'orderId',
+      otherKey: 'productId'
+    });
   };
 
   static config(sequelize) {

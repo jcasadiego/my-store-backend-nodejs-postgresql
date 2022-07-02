@@ -22,7 +22,7 @@ class CategoryService {
       include: ['products']
     });
     if(!category){
-      throw boom.notFound('User not found');
+      throw boom.notFound('Category not found');
     }
     return category;
   }
